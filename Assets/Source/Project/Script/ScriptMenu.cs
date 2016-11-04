@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 using System.Collections;
 
 public class ScriptMenu : ScriptGeneric
@@ -29,6 +30,8 @@ public class ScriptMenu : ScriptGeneric
 
     private GameObject load;
     public GameObject canvas;
+    public GameObject btnGo;
+    public EventSystem es;
 
     public AudioSource erro;
     public AudioSource up;
@@ -68,6 +71,7 @@ public class ScriptMenu : ScriptGeneric
     private void ActiveCanvas()
     {
         canvas.SetActive(true);
+        es.SetSelectedGameObject(btnGo);
     }
 
     public void Go()
